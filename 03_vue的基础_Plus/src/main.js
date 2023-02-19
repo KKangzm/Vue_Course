@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './03_computed.vue'
+import App from './App.vue'
 
 /* 
     App.vue是根组件
