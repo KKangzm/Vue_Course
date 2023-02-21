@@ -9,8 +9,8 @@
         - 先在子组件中定义props
  -->
  <script setup>
- const props = defineProps(["item"])
- const item = props.item
+ const props = defineProps(["type"])
+ const item = props.type
 </script>
 
 <template>

@@ -45,13 +45,13 @@
             <div v-show="current === 0">
                 <!-- 吃的 -->
                 <div class="tab-list">
-                    <TabItem :item="food"></TabItem>
+                    <TabItem :type="food"></TabItem>
                 </div>
             </div>
             <div v-show="current === 1">
                 <!-- 用的 -->
                 <div class="tab-list">
-                    <TabItem :item="goods"></TabItem>
+                    <TabItem :type="goods"></TabItem>
                 </div>
             </div>
         </div>
