@@ -5,66 +5,19 @@
     // 创建一个变量来记录选项卡的状态
     const current = ref(0)  // 0 表示吃的， 1 表示用的
 
-    // const food = reactive({
-    //     name: "蛋糕甜品",
-    //     img: "/images/蛋糕甜品.png",
-    //     rate: 1,
-    //     hot: 300
-    // })
+    const food = reactive({
+        name: "蛋糕甜品",
+        img: "/images/蛋糕甜品.png",
+        rate: 1,
+        price: "300 刀勒"
+    })
 
-    // const goods = reactive({
-    //     name: "个护清洁",
-    //     img: "/images/个护清洁.png",
-    //     rate: 1,
-    //     hot: 200
-    // })
-
-    const foods = reactive([
-        {
-            name: "蛋糕甜品",
-            img: "/images/蛋糕甜品.png",
-            rate: 1,
-            hot: 600
-        },
-        {
-            name: "烤肉",
-            img: "/images/烤肉.png",
-            rate: 2,
-            hot: 300
-        },
-        {
-            name: "小吃",
-            img: "/images/小吃.png",
-            rate: 3,
-            hot: 100
-        }
-    ])
-
-    const goods = reactive([
-        {
-            name: "生活家电",
-            img: "/images/生活家电.png",
-            rate: 1,
-            hot: 1000
-        },
-        {
-            name: "母婴亲子",
-            img: "/images/母婴亲子.png",
-            rate: 2,
-            hot: 500
-        },
-        {
-            name: "个护清洁",
-            img: "/images/个护清洁.png",
-            rate: 3,
-            hot: 150
-        }
-    ])
-
-    // 获取最大热度
-    const foodMaxHot = foods[0].hot
-    const goodMaxHot = goods[0].hot
-
+    const goods = reactive({
+        name: "个护清洁",
+        img: "/images/个护清洁.png",
+        rate: 1,
+        price: "200 刀勒"
+    })
 </script>
 
 <template>
@@ -92,26 +45,13 @@
             <div v-show="current === 0">
                 <!-- 吃的 -->
                 <div class="tab-list">
-                    <!-- <TabItem :type="foods[0]" :maxHot="maxHot"></TabItem>
-                    <TabItem :type="foods[1]" :maxHot="maxHot"></TabItem>
-                    <TabItem :type="foods[2]" :maxHot="maxHot"></TabItem> -->
-
-                    <TabItem 
-                        v-for="food in foods"
-                        :type="food" 
-                        :maxHot="foodMaxHot"
-                        ></TabItem>
-
+                    <TabItem :type="food"></TabItem>
                 </div>
             </div>
             <div v-show="current === 1">
                 <!-- 用的 -->
                 <div class="tab-list">
-                    <TabItem 
-                        v-for="good in goods"
-                        :type="good"
-                        :maxHot="goodMaxHot"
-                        ></TabItem>
+                    <TabItem :type="goods"></TabItem>
                 </div>
             </div>
         </div>
